@@ -40,8 +40,8 @@ public class WeatherTask {
     public void getCurrentWeather() {
         CurrentWeather currentWeather;
         try {
-            var owmConfig = serviceConfig.getOpenWeatherMap();
-            currentWeather = openWeaherMapService.getCurrentWeather(owmConfig.getCityId(), owmConfig.getApiKey());
+            var config = serviceConfig.getOpenWeatherMap();
+            currentWeather = openWeaherMapService.getCurrentWeather(config.getCityId(), config.getApiKey());
             log.debug("{}", currentWeather);
         } catch (Exception e) {
             log.warn("Open Weather Mapからのデータ取得に失敗しました。", e);
@@ -49,8 +49,8 @@ public class WeatherTask {
         }
 
         try {
-            var ambientConfig = serviceConfig.getAmbientWeather();
-            ambientService.send(ambientConfig, ZonedDateTime.now(), currentWeather.getWeather(),
+            var config = serviceConfig.getAmbientWeather();
+            ambientService.send(config, ZonedDateTime.now(), currentWeather.getWeather(),
                     currentWeather.getTemperature().doubleValue(), currentWeather.getHumidity().doubleValue(),
                     currentWeather.getPressure().doubleValue(), currentWeather.getWindSpeed().doubleValue(),
                     currentWeather.getCloudness().doubleValue(), currentWeather.getRain1h().doubleValue(),

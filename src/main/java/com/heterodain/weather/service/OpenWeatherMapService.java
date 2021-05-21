@@ -5,6 +5,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Optional;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.heterodain.weather.model.CurrentWeather;
 
@@ -32,7 +33,7 @@ public class OpenWeatherMapService {
      * 
      * @param cityId 都市ID
      * @param apiKey APIアクセスキー
-     * @return
+     * @return 現在の天気
      * @throws IOException
      */
     public CurrentWeather getCurrentWeather(String cityId, String apiKey) throws IOException {
@@ -51,20 +52,21 @@ public class OpenWeatherMapService {
             throw new IOException("OpenWeatherMap Response Code " + resCode);
         }
 
+        JsonNode json;
         try (var is = conn.getInputStream()) {
-            var json = om.readTree(is);
-
-            var result = new CurrentWeather();
-            result.setWeather(json.at("/weather/0/description").textValue());
-            result.setTemperature(json.at("/main/temp").floatValue());
-            result.setPressure(json.at("/main/pressure").intValue());
-            result.setHumidity(json.at("/main/humidity").intValue());
-            result.setWindSpeed(json.at("/wind/speed").floatValue());
-            result.setCloudness(json.at("/clouds/all").intValue());
-            result.setRain1h(json.at("/rain/1h").intValue());
-            result.setSnow1h(json.at("/snow/1h").intValue());
-
-            return result;
+            json = om.readTree(is);
         }
+
+        var result = new CurrentWeather();
+        result.setWeather(json.at("/weather/0/description").textValue());
+        result.setTemperature(json.at("/main/temp").floatValue());
+        result.setPressure(json.at("/main/pressure").intValue());
+        result.setHumidity(json.at("/main/humidity").intValue());
+        result.setWindSpeed(json.at("/wind/speed").floatValue());
+        result.setCloudness(json.at("/clouds/all").intValue());
+        result.setRain1h(json.at("/rain/1h").intValue());
+        result.setSnow1h(json.at("/snow/1h").intValue());
+
+        return result;
     }
 }
