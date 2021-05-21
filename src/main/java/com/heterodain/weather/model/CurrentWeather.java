@@ -3,7 +3,7 @@ package com.heterodain.weather.model;
 import lombok.Data;
 
 /**
- * 天気情報
+ * 現在の天気情報
  */
 @Data
 public class CurrentWeather {

@@ -1,10 +1,17 @@
-# サービス設定
+### サービス設定 ###
 service:
+  ## Open Weather Map API接続設定
   open-weather-map:
+    # 都市ID
     city-id: 1848354 # 横浜
+    # APIアクセスキー
     api-key: "********************************"
 
+  ## Ambient接続設定
   ambient-weather:
+    # チャネルID
     channel-id: 99999
+    # リードキー
     read-key: "****************"
+    # ライトキー
     write-key: "****************"

@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
- * 天気情報取得
+ * 天気情報取得アプリケーション
  */
 @SpringBootApplication
 @EnableScheduling
