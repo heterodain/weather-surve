@@ -35,22 +35,6 @@ public class WeatherTask {
     private AmbientService ambientService;
 
     /**
-     * 初期化
-     */
-    @PostConstruct
-    public void init() {
-        // TODO
-    }
-
-    /**
-     * 終了処理
-     */
-    @PreDestroy
-    public void destroy() {
-        // TODO
-    }
-
-    /**
      * 15分毎にOpen Weather Mapからデータ取得して、Ambientに送信
      * 
      * @throws InterruptedException
