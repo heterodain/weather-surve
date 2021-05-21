@@ -2,13 +2,8 @@ package com.heterodain.weather.task;
 
 import java.io.IOException;
 import java.time.ZonedDateTime;
-import java.util.Optional;
-
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 
 import com.heterodain.weather.config.ServiceConfig;
-import com.heterodain.weather.model.CurrentWeather;
 import com.heterodain.weather.service.AmbientService;
 import com.heterodain.weather.service.OpenWeatherMapService;
 
