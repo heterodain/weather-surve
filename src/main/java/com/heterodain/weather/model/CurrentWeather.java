@@ -20,7 +20,7 @@ public class CurrentWeather {
     /** 雲量(%) */
     private Integer cloudness;
     /** 1時間当たりの降水量(mm) */
-    private Integer rain1h;
+    private Float rain1h;
     /** 1時間当たりの積雪量(mm) */
-    private Integer snow1h;
+    private Float snow1h;
 }

@@ -64,8 +64,8 @@ public class OpenWeatherMapService {
         result.setHumidity(json.at("/main/humidity").intValue());
         result.setWindSpeed(json.at("/wind/speed").floatValue());
         result.setCloudness(json.at("/clouds/all").intValue());
-        result.setRain1h(json.at("/rain/1h").intValue());
-        result.setSnow1h(json.at("/snow/1h").intValue());
+        result.setRain1h(json.at("/rain/1h").floatValue());
+        result.setSnow1h(json.at("/snow/1h").floatValue());
 
         return result;
     }
