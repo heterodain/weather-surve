@@ -10,17 +10,17 @@ public class CurrentWeather {
     /** 天候 */
     private String weather;
     /** 温度(℃) */
-    private Float temperature;
+    private Double temperature;
     /** 気圧(hPa) */
     private Integer pressure;
     /** 湿度(%) */
     private Integer humidity;
     /** 風速(meter/秒) */
-    private Float windSpeed;
+    private Double windSpeed;
     /** 雲量(%) */
     private Integer cloudness;
     /** 1時間当たりの降水量(mm) */
-    private Float rain1h;
+    private Double rain1h;
     /** 1時間当たりの積雪量(mm) */
-    private Float snow1h;
+    private Double snow1h;
 }

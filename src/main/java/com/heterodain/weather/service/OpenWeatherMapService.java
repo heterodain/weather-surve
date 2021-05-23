@@ -1,6 +1,8 @@
 package com.heterodain.weather.service;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Optional;
@@ -59,13 +61,13 @@ public class OpenWeatherMapService {
 
         var result = new CurrentWeather();
         result.setWeather(json.at("/weather/0/description").textValue());
-        result.setTemperature(json.at("/main/temp").floatValue());
+        result.setTemperature(json.at("/main/temp").doubleValue());
         result.setPressure(json.at("/main/pressure").intValue());
         result.setHumidity(json.at("/main/humidity").intValue());
-        result.setWindSpeed(json.at("/wind/speed").floatValue());
+        result.setWindSpeed(json.at("/wind/speed").doubleValue());
         result.setCloudness(json.at("/clouds/all").intValue());
-        result.setRain1h(json.at("/rain/1h").floatValue());
-        result.setSnow1h(json.at("/snow/1h").floatValue());
+        result.setRain1h(json.at("/rain/1h").doubleValue());
+        result.setSnow1h(json.at("/snow/1h").doubleValue());
 
         return result;
     }
