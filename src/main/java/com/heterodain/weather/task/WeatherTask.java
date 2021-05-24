@@ -31,12 +31,12 @@ public class WeatherTask {
     private AmbientService ambientService;
 
     /**
-     * 15分毎にOpen Weather Mapからデータ取得して、Ambientに送信
+     * 5分毎にOpen Weather Mapからデータ取得して、Ambientに送信
      * 
      * @throws IOException
      * @throws InterruptedException
      */
-    @Scheduled(cron = "0 */15 * * * *")
+    @Scheduled(cron = "0 */5 * * * *")
     public void getCurrentWeather() {
         CurrentWeather currentWeather;
         try {
