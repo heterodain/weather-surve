@@ -87,8 +87,8 @@ public class AmbientService {
 
         // HTTP POST
         var url = String.format(SEND_URL, info.getChannelId());
-        log.debug("request > " + url);
-        log.debug("body > " + jsonString);
+        log.debug("request > {}", url);
+        log.debug("body > {}", jsonString);
 
         var conn = (HttpURLConnection) new URL(url).openConnection();
         conn.setRequestMethod("POST");
@@ -119,7 +119,7 @@ public class AmbientService {
         // HTTP GET
         var url = String.format(READ_DAILY_URL, info.getChannelId(), info.getReadKey(),
                 date.format(DateTimeFormatter.ISO_DATE));
-        log.debug("request > " + url);
+        log.debug("request > {}", url);
 
         var conn = (HttpURLConnection) new URL(url).openConnection();
         conn.setRequestMethod("GET");
@@ -153,7 +153,7 @@ public class AmbientService {
         var url = String.format(READ_PERIOD_URL, info.getChannelId(), info.getReadKey(),
                 URLEncoder.encode(utcStart.format(DateTimeFormatter.ISO_DATE_TIME), "UTF-8"),
                 URLEncoder.encode(utcEnd.format(DateTimeFormatter.ISO_DATE_TIME), "UTF-8"));
-        log.debug("request > " + url);
+        log.debug("request > {}", url);
 
         var conn = (HttpURLConnection) new URL(url).openConnection();
         conn.setRequestMethod("GET");
@@ -181,7 +181,7 @@ public class AmbientService {
     public List<ReadData> read(Ambient info, int n) throws IOException {
         // HTTP GET
         var url = String.format(READ_N_URL, info.getChannelId(), info.getReadKey(), n);
-        log.debug("request > " + url);
+        log.debug("request > {}", url);
 
         var conn = (HttpURLConnection) new URL(url).openConnection();
         conn.setRequestMethod("GET");
@@ -210,5 +210,6 @@ public class AmbientService {
         private Double d6;
         private Double d7;
         private Double d8;
+        private String cmnt;
     }
 }
