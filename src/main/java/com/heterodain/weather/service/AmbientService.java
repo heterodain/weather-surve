@@ -29,9 +29,13 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Slf4j
 public class AmbientService {
+    /** データ送信URL */
     private static final String SEND_URL = "http://54.65.206.59/api/v2/channels/%s/dataarray";
+    /** 1日分のデータ取得URL */
     private static final String READ_DAILY_URL = "http://54.65.206.59/api/v2/channels/%s/data?readKey=%s&date=%s";
+    /** 期間のデータ取得URL */
     private static final String READ_PERIOD_URL = "http://54.65.206.59/api/v2/channels/%s/data?readKey=%s&start=%s&end=%s";
+    /** 直近のデータ取得URL */
     private static final String READ_N_URL = "http://54.65.206.59/api/v2/channels/%s/data?readKey=%s&n=%d";
 
     /** UTCタイムゾーン */

@@ -1,6 +1,5 @@
 package com.heterodain.weather.task;
 
-import java.io.IOException;
 import java.time.ZonedDateTime;
 
 import com.heterodain.weather.config.ServiceConfig;
@@ -15,6 +14,9 @@ import org.springframework.stereotype.Component;
 import lombok.var;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * Open Weather Mapから天気情報を取得して、Ambientに送信するタスク
+ */
 @Component
 @Slf4j
 public class WeatherTask {
@@ -32,9 +34,6 @@ public class WeatherTask {
 
     /**
      * 5分毎にOpen Weather Mapからデータ取得して、Ambientに送信
-     * 
-     * @throws IOException
-     * @throws InterruptedException
      */
     @Scheduled(cron = "0 */5 * * * *")
     public void getCurrentWeather() {
