@@ -6,7 +6,7 @@ Open Weather Mapから天気情報を取得して、Ambientでグラフ化しま
 ![Lombok](https://img.shields.io/badge/Lombok-1.18.20-green.svg) 
 ![Jackson](https://img.shields.io/badge/Jackson-2.11.4-green.svg) 
 
-`TODO Youtubeへのリンク`
+[![Video1](https://img.youtube.com/vi/13LnWvSBatA/0.jpg)](https://youtu.be/13LnWvSBatA)
 
 [Open Weather Map](https://openweathermap.org/)  
 [Ambient](https://ambidata.io/)
