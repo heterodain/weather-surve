@@ -19,11 +19,12 @@ Open Weather Mapから天気情報を取得して、Ambientでグラフ化しま
 1. application.ymlを編集して、WEBサービスの接続情報を記入してください。  
 (Edit application.yml and fills connect information of WEB service)  
 
-2. JARモジュール生成 (Create JAR)
-```command
-mvn clean package
-```
-3. 実行 (Execute)
-```command
-java -jar weather-surve-1.0.jar
-```
+2. 実行 (Execute)
+   - VS Code 上で実行 (Run on VS Code)  
+     App.java を右クリックして実行してください。(Right-click on the App.java and run)
+
+   - ターミナル上で実行 (Run on terminal)
+     ```command
+     mvn clean package
+     java -jar weather-surve-1.0.jar
+     ```
