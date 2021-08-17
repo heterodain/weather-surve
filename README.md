@@ -2,7 +2,7 @@
 Open Weather Mapから天気情報を取得して、Ambientでグラフ化します。  
 (Get Weather Information form "Open Weather Map" and graphed in "Ambient")
 
-![SpringBoot](https://img.shields.io/badge/SpringBoot-2.4.5-green.svg)
+![SpringBoot](https://img.shields.io/badge/SpringBoot-2.5.3-green.svg)
 ![Lombok](https://img.shields.io/badge/Lombok-1.18.20-green.svg) 
 ![Jackson](https://img.shields.io/badge/Jackson-2.11.4-green.svg) 
 
