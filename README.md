@@ -20,11 +20,12 @@ Open Weather Mapから天気情報を取得して、Ambientでグラフ化しま
 (Edit application.yml and fills connect information of WEB service)  
 
 2. 実行 (Execute)
-   - VS Code 上で実行 (Run on VS Code)  
-     App.java を右クリックして実行してください。(Right-click on the App.java and run)
-
-   - ターミナル上で実行 (Run on terminal)
-     ```command
-     mvn clean package
-     java -jar weather-surve-1.0.jar
-     ```
+    - VS Code上で実行 (Run on VS Code)  
+      App.javaファイルを右クリックして実行 (Right-click on the App.java and run)
+  
+    - ターミナル上で実行 (Run on Terminal)  
+      ```command
+      mvn clean package
+      java -jar weather-surve-1.0.jar
+      ```
+      > jarとapplication.ymlファイルを同一フォルダに置いてから実行 (Put jar and application.yml files in same folder and run)
